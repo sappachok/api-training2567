@@ -21,4 +21,22 @@ echo "<b>JSON Decode</b>";
 echo "<pre>";
 var_dump($data);
 echo "</pre>";
+
+echo "<b>Table Data</b>";
+echo "<table border='1'>";
+echo "<tr>";
+echo "<th>Name</th>";
+echo "<th>Age</th>";
+echo "<th>Occupation</th>";
+echo "</tr>";
+
+foreach($data as $no => $val) {
+    echo "<tr>";
+    echo "<td>".$val->name."</td>";
+    echo "<td>".$val->age."</td>";
+    echo "<td>".$val->occupation."</td>";
+    echo "</tr>";
+}
+
+echo "</table>";
 ?>
