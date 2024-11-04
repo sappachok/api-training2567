@@ -5,7 +5,19 @@
 
 <script>
 $(document).ready(function(){
-    
+    $.get('api/student.php', function(response) {
+        console.log(response);
+        data = $.parseJSON(response);
+        $.each(data, function(key, value) {
+            $("#tabledata").append(
+                "<tr>" +
+                "<td>" + value.name + "</td>" +
+                "<td>" + value.email + "</td>" +
+                "<td><img src='" + value.picture + "' width='120'/></td>" +
+                "</tr>" 
+            );
+        });
+    });    
 });
 </script>
 </head>
@@ -15,8 +27,8 @@ $(document).ready(function(){
 <table border="1" id="tabledata">
 <thead>
     <th>Name</th>
-    <th>Age</th>
-    <th>Occupation</th>
+    <th>Email</th>
+    <th>Picutrue</th>
 </thead>
 <tbody>
 </tbody>
