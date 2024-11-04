@@ -9,4 +9,16 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($curl);
 
 curl_close($curl);
+
+var_dump($response);
+
+echo "<b>JSON Data</b>";
+echo "<pre>".$response."</pre>";
+
+$data =  json_decode($response);
+
+echo "<b>JSON Decode</b>";
+echo "<pre>";
+var_dump($data);
+echo "</pre>";
 ?>
